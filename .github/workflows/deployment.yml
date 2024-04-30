@@ -33,7 +33,7 @@ jobs:
 
       #Build react app
       - name: Build
-        uses: npm run build
+        run: npm run build
 
       #Deploy the react app to github pages
       - name: Deploy
