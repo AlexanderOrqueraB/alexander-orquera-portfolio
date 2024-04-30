@@ -6,7 +6,7 @@ Project under construction...
 
 ### `Linkedin profile`
 
-www.linkedin.com/in/alexander-orquera-barrera-2b13b5171
+[www.linkedin.com/in/alexander-orquera-barrera-2b13b5171]
 
 ### `Github account`
 
