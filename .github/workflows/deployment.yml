@@ -35,6 +35,14 @@ jobs:
       - name: Build
         run: npm run build
 
+      #Another way to deploy
+      #- name: predeploy
+      #  run: npm run build
+
+      #- name: deploy
+      #  run: gh-pages -d build #needs "gh-pages": "^6.1.1", in package.json
+
+      #Current way to deploy
       #Deploy the react app to github pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
