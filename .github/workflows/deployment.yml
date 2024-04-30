@@ -45,7 +45,7 @@ jobs:
       #Current way to deploy
       #Deploy the react app to github pages
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v4 #actions/deploy-pages@vXcheckVersion
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build #directory to deploy
