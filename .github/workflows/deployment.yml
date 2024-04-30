@@ -1,0 +1,43 @@
+name: Deploy React app to live
+
+on: #push: branches: deploy-react-app #branch name could be master
+  workflow_dispatch:
+
+jobs:
+  deploy-react-to-gh-pages:
+    runs-on: ubuntu-latest
+
+    steps:
+      #Checkout the repository content to github runner
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      #Setup nodejs environment
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: "18.16.1"
+
+      #Cache dependencies to speed up the build
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: | 
+           ${{ runner.os }}-node- 
+
+      #Install dependencies
+      - name: Install dependencies
+        run: npm i
+
+      #Build react app
+      - name: Build
+        uses: npm run build
+
+      #Deploy the react app to github pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build #directory to deploy
