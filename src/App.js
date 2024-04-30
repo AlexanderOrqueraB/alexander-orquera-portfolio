@@ -4,9 +4,9 @@ import './App.css';
 function App() {
   return (
       <header className="App-header">
-        <a>Alexander Orquera Barrera</a>
+        <h1>Alexander Orquera Barrera</h1>
         <img src={logo} className="App-logo" alt="logo" />
-        <a>Portfolio</a>
+        <h3>Portfolio</h3>
         <a
           className="App-link"
           href="https://github.com/AlexanderOrqueraB"
